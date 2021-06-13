@@ -19,12 +19,14 @@ export default function Home({ data }) {
   const {
     results_available = 0,
     results_start = 1,
+    results_returned = 1,
     shop: defaultShops = [],
   } = data.results
 
   const [shop, updateShops] = useState(defaultShops)
   const [page, updatePage] = useState({
     results_available: results_available,
+    results_returned: results_returned,
     results_start: results_start,
   })
 
@@ -43,6 +45,7 @@ export default function Home({ data }) {
 
       updatePage({
         results_available: nextData.results_available,
+        results_returned: nextData.results_returned,
         results_start: nextData.results_start,
       })
 
@@ -65,6 +68,7 @@ export default function Home({ data }) {
 
       updatePage({
         results_available: nextData.results_available,
+        results_returned: nextData.results_returned,
         results_start: nextData.results_start,
       })
 
